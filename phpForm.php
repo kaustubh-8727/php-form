@@ -17,11 +17,11 @@ $intrest=$_POST['intrest'];
 <html>
   <body>
     <form method="post" action="">
-        Name <input type="text" name="name"><br>
-        Email <input type="text" name="email"><br>
-        Contact <input type="text" name="contact"><br>
-        City <input type="text" name="city"><br>
-        Course <input type="text" name="course"><br>
+        Name <input type="text" name="name" required=""><br>
+        Email <input type="text" name="email" required=""><br>
+        Contact <input type="text" name="contact" required=""><br>
+        City <input type="text" name="city" required=""><br>
+        Course <input type="text" name="course" required=""><br>
         Intrest:
         Volleyball <input type="radio" value="Volleyball" name="intrest"> 
         Music <input type="radio" value="music" name="intrest"> 
