@@ -1,15 +1,21 @@
 <?php
 if(isset($_POST['submit'])){
-	if(isset($_POST['name']) && isset($_POST['email'])&&isset($_POST['contact'])&&isset($_POST['city'])&&isset($_POST['course'])&&isset($_POST['intrest'])){
+	if(empty($_POST['name']) && empty($_POST['email'])&& empty($_POST['contact'])&&empty($_POST['city'])&&empty($_POST['course'])&&empty($_POST['intrest'])){
+		echo "Value not submitted";
+		$name="none";
+		$email="none";
+		$contact="none";
+		$city="none";
+		$course="none";
+		$intrest="none";
+	}
+	else{
 		$name=$_POST['name'];
 		$email=$_POST['email'];
 		$contact=$_POST['contact'];
 		$city=$_POST['city'];
 		$course=$_POST['course'];
 		$intrest=$_POST['intrest'];
-	}
-	else{
-		echo "Value not submitted";
 	}
 }
 else{
@@ -20,12 +26,6 @@ else{
 	$course="none";
 	$intrest="none";
 }
-  //echo "name = $name<br>";
-  //echo "email = $email<br>";
-  //echo "contact = $contact<br>";
-  //echo "city = $city<br>";
-  //echo "course = $course<br>";
-  //echo "intrest = $intrest<br>";
 ?>
 
 <!DOCTYPE html>
@@ -51,15 +51,16 @@ tr:nth-child(even){
         Name <input type="text" name="name" required ><br>
         Email <input type="Email" name="email" required><br>
         Contact <input type="text" name="contact" maxlength="10"><br>
-        City <input type="text" name="city"required ><br>
-        Course <input type="text" name="course" required><br>
+        City <input type="text" name="city" ><br>
+        Course <input type="text" name="course" ><br>
         Intrest:
         Volleyball <input type="radio" value="Volleyball" name="intrest"> 
         Music <input type="radio" value="music" name="intrest"> 
         reading books <input type="radio" value="reading books" name="intrest"> 
         indoor games <input type="radio" value="indoor games" name="intrest"><br>
         <input type="submit" value="submit" name="submit"><br>
-        <table width="100px" border=1px; style=" border-collapse: collapse">
+    </form>
+        <table>
               <tr width="100px">
                   <th>Name</th>
                   <th>Eamil</th>
@@ -77,6 +78,5 @@ tr:nth-child(even){
                   <th><?php echo "$intrest" ?></th>
               </tr>
           </table>
-    </form>
   </body>
 </html>
